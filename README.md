@@ -1,6 +1,6 @@
 # ArenaOS
 
-ArenaOS is a futuristic operations dashboard for live event venues, combining navigation, accessibility support, and staff coordination in a single experience.
+ArenaOS is an AI-powered arena operations and fan experience platform designed for large-scale events such as the FIFA World Cup 2026. It combines intelligent crowd management, personalized navigation, multilingual assistance, accessibility support, transportation guidance, and real-time operational intelligence in a single experience.
 
 ## Development
 
