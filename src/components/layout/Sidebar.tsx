@@ -1,8 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  ShieldAlert, User, UserCheck, Activity, Map, 
-  AlertTriangle, Settings, Power 
-} from 'lucide-react';
+import { User, UserCheck, Activity, Map, AlertTriangle, Settings, Power } from 'lucide-react';
 
 export const Sidebar = () => {
   const location = useLocation();
@@ -19,9 +16,11 @@ export const Sidebar = () => {
   return (
     <aside className="fixed left-0 top-0 bottom-0 w-20 md:w-64 glass-panel border-r border-gray-800/50 flex flex-col z-40 rounded-none rounded-r-2xl hidden sm:flex">
       <div className="p-6 flex items-center justify-center md:justify-start space-x-3 border-b border-gray-800/50">
-        <ShieldAlert className="w-8 h-8 text-primary-500 neon-text" />
+        <div className="rounded-md bg-white/6 p-1 flex items-center justify-center">
+          <img src="/arenaos-logo.svg" alt="ArenaOS logo" className="w-10 h-10 object-contain" />
+        </div>
         <div className="hidden md:block">
-          <h1 className="font-black text-lg tracking-wider">Arena-OS</h1>
+          <h1 className="font-black text-lg tracking-wider">ArenaOS</h1>
           <p className="text-[10px] text-primary-400 uppercase tracking-widest">Command Center</p>
         </div>
       </div>

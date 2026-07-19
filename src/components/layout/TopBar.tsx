@@ -1,10 +1,14 @@
 import { Bell, Globe, Activity, CloudRain, Clock, AlertOctagon } from 'lucide-react';
 import { useAppContext } from '../../context/AppContext';
 import { useEffect, useState } from 'react';
+import { getAllStadiumData } from '../../data/mockData';
 
 export const TopBar = () => {
   const { language, setLanguage } = useAppContext();
   const [time, setTime] = useState(new Date());
+  const { weather, matches } = getAllStadiumData();
+  const weatherInfo = weather[0];
+  const matchInfo = matches[0];
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -22,7 +26,7 @@ export const TopBar = () => {
       <div className="flex items-center space-x-6">
         <div className="flex flex-col">
           <span className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Current Match</span>
-          <span className="text-sm font-bold text-white">BRA vs ARG • Group Stage</span>
+          <span className="text-sm font-bold text-white">{matchInfo?.match ?? 'No live match'} • {matchInfo?.stadium ?? 'Arena'}</span>
         </div>
         <div className="h-8 w-px bg-gray-800" />
         <div className="flex items-center space-x-2 text-green-500">
@@ -34,7 +38,7 @@ export const TopBar = () => {
       <div className="flex items-center space-x-6">
         <div className="hidden md:flex items-center space-x-2 text-gray-400">
           <CloudRain className="w-4 h-4" />
-          <span className="text-sm font-medium">72°F / Rain 20%</span>
+          <span className="text-sm font-medium">{weatherInfo?.temperatureC ?? 0}°C / {weatherInfo?.condition ?? 'Clear'} • {weatherInfo?.humidity ?? 0}% humidity</span>
         </div>
 
         <button onClick={cycleLanguage} className="flex items-center space-x-1 text-gray-400 hover:text-white transition-colors">

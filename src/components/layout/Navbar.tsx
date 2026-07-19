@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Shield, Globe, Settings, BellRing, Sparkles } from 'lucide-react';
+import { Globe, Settings, BellRing, Sparkles } from 'lucide-react';
 import { useAppContext } from '../../context/AppContext';
 
 export const Navbar = () => {
@@ -21,12 +21,14 @@ export const Navbar = () => {
     <nav className="glass-panel fixed inset-x-0 top-0 z-50 border-b border-slate-800/70">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <div className="rounded-2xl border border-cyan-400/30 bg-cyan-500/10 p-2 shadow-[0_0_24px_rgba(6,182,212,0.22)]">
-            <Shield className="h-6 w-6 text-cyan-300" />
-          </div>
-          <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">ArenaOS</p>
-            <p className="text-sm font-semibold text-slate-100">Operations Intelligence</p>
+          <div className="flex items-center gap-3">
+            <div className="rounded-md bg-white/6 p-1.5 flex items-center justify-center">
+              <img src="/arenaos-logo.svg" alt="ArenaOS logo" className="h-12 w-12 object-contain" />
+            </div>
+            <div>
+              <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">ArenaOS</p>
+              <p className="text-sm font-semibold text-slate-100">Operations Intelligence</p>
+            </div>
           </div>
         </Link>
 
